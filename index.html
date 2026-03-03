@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>陈芊榛 | 自我介绍</title>
+  <style>
+    :root {
+      --bg-1: #0d1b2a;
+      --bg-2: #13223a;
+      --bg-3: #172c45;
+      --ink: #e9f2ff;
+      --muted: #98acc8;
+      --line: #34567e;
+      --accent: #4dc3ff;
+      --accent-2: #71f0c8;
+      --warm: #ffc56e;
+      --card: rgba(13, 30, 53, 0.78);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 18%, #1d4f7f 0%, transparent 30%),
+        radial-gradient(circle at 82% 10%, #1f5f71 0%, transparent 34%),
+        linear-gradient(160deg, var(--bg-1), var(--bg-2) 45%, var(--bg-3));
+      font-family: "Source Han Serif SC", "Noto Serif SC", "STZhongsong", serif;
+      min-height: 100%;
+      scroll-behavior: smooth;
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.08;
+      background-image:
+        linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.6) 25%, transparent 26%, transparent 74%, rgba(255, 255, 255, 0.5) 75%, transparent 76%),
+        linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 0.6) 25%, transparent 26%, transparent 74%, rgba(255, 255, 255, 0.4) 75%, transparent 76%);
+      background-size: 3px 3px;
+    }
+
+    .wrap {
+      width: min(1100px, 92%);
+      margin: 36px auto 52px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero {
+      padding: 34px 28px 28px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(145deg, rgba(29, 63, 98, 0.75), rgba(14, 27, 49, 0.85));
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 18px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: -120px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(113, 240, 200, 0.3), transparent 65%);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 5.6vw, 58px);
+      line-height: 1.08;
+      letter-spacing: 1px;
+    }
+
+    .tagline {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      letter-spacing: 0.3px;
+    }
+
+    .chips {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      font-family: "JetBrains Mono", "Consolas", monospace;
+      font-size: 12px;
+      padding: 5px 10px;
+      border: 1px solid #4a739d;
+      border-radius: 999px;
+      color: #cfe7ff;
+      background: rgba(17, 41, 67, 0.72);
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: 1.2fr 1fr;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      background: var(--card);
+      backdrop-filter: blur(4px);
+    }
+
+    .card h2 {
+      margin: 0 0 12px;
+      font-size: 21px;
+      color: var(--accent-2);
+      font-weight: 600;
+    }
+
+    .about {
+      line-height: 1.8;
+      font-size: 15px;
+      color: #d7e6f8;
+    }
+
+    .kv {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      row-gap: 8px;
+      column-gap: 8px;
+      font-size: 14px;
+    }
+
+    .k {
+      color: var(--muted);
+    }
+
+    .v a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px dashed #86b7de;
+    }
+
+    .timeline {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .item {
+      border-left: 2px solid #4e78a5;
+      padding-left: 12px;
+      position: relative;
+    }
+
+    .item::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      position: absolute;
+      left: -5px;
+      top: 8px;
+      box-shadow: 0 0 0 4px rgba(77, 195, 255, 0.18);
+    }
+
+    .item h3 {
+      margin: 0;
+      font-size: 16px;
+      color: #f0f7ff;
+    }
+
+    .time {
+      margin: 3px 0 6px;
+      color: var(--warm);
+      font-family: "JetBrains Mono", "Consolas", monospace;
+      font-size: 12px;
+    }
+
+    .item p {
+      margin: 0;
+      color: #c3d5ec;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .project-grid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project {
+      border: 1px solid #41688f;
+      border-radius: 12px;
+      padding: 13px;
+      background: linear-gradient(150deg, rgba(23, 53, 84, 0.75), rgba(12, 27, 48, 0.78));
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-2px);
+      border-color: #7dc5ff;
+    }
+
+    .project h3 {
+      margin: 0 0 6px;
+      color: #f8fbff;
+      font-size: 15px;
+    }
+
+    .project p {
+      margin: 0;
+      font-size: 13px;
+      color: #c8dbf3;
+      line-height: 1.65;
+    }
+
+    .pill-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 10px;
+    }
+
+    .pill {
+      font-family: "JetBrains Mono", "Consolas", monospace;
+      font-size: 12px;
+      border: 1px solid #4a739d;
+      border-radius: 999px;
+      padding: 4px 9px;
+      color: #d8edff;
+      background: #173553;
+    }
+
+    .skill {
+      margin-bottom: 10px;
+    }
+
+    .skill:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-head {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .bar {
+      height: 10px;
+      border-radius: 999px;
+      background: #213d5c;
+      overflow: hidden;
+      border: 1px solid #3d648a;
+    }
+
+    .bar > span {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #5dc6ff, #6df0c9);
+      transition: width 1.1s ease;
+    }
+
+    .awards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .award {
+      border: 1px solid #6e86a6;
+      background: rgba(22, 44, 70, 0.8);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #d7e8fa;
+    }
+
+    .footer {
+      margin-top: 12px;
+      color: #9bb2ce;
+      font-size: 12px;
+      text-align: right;
+      font-family: "JetBrains Mono", "Consolas", monospace;
+    }
+
+    @media (max-width: 960px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="wrap">
+    <section class="hero">
+      <h1>陈芊榛</h1>
+      <p class="tagline">算法工程师 / 嵌入式工程师 · 关注智能系统安全控制、强化学习与 AI 系统落地</p>
+      <div class="chips">
+        <span class="chip">Beihang University</span>
+        <span class="chip">Network Security</span>
+        <span class="chip">Security Control</span>
+        <span class="chip">Reinforcement Learning Sim-to-Real</span>
+        <span class="chip">AI System Engineering</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>关于我</h2>
+        <p class="about">
+          我正在北京航空航天大学攻读网络空间安全硕士，具有算法与嵌入式双栈背景。
+          过往经历围绕“从模型到系统”展开：从强化学习训练、编译优化到机器人实物部署，
+          我更关注技术在真实硬件环境中的可运行性、稳定性与性能收益。
+        </p>
+        <div class="pill-line">
+          <span class="pill">智能系统安全控制</span>
+          <span class="pill">强化学习</span>
+          <span class="pill">AI 系统落地</span>
+          <span class="pill">隐私计算</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>联系信息</h2>
+        <div class="kv">
+          <div class="k">电话</div>
+          <div class="v"><a href="tel:+8615206051639">(+86) 152-0605-1639</a></div>
+
+          <div class="k">邮箱</div>
+          <div class="v"><a href="mailto:15206051639@163.com">15206051639@163.com</a></div>
+
+          <div class="k">学历</div>
+          <div class="v">硕士研究生（保研）</div>
+
+          <div class="k">方向</div>
+          <div class="v">网络空间安全 / 智能控制 / AI 工程化</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="grid" style="margin-top:14px;">
+      <article class="card">
+        <h2>教育背景</h2>
+        <ul class="timeline">
+          <li class="item">
+            <h3>北京航空航天大学（985）｜网络空间安全 硕士（保研）</h3>
+            <div class="time">2025.09 - 2028.06</div>
+            <p>研究兴趣聚焦智能系统安全、算法工程化与高性能计算。</p>
+          </li>
+          <li class="item">
+            <h3>北京交通大学（211）｜信息工程 本科</h3>
+            <div class="time">2021.06 - 2025.06</div>
+            <p>系统学习信号处理、嵌入式、控制与人工智能相关课程。</p>
+          </li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>技能雷达（核心）</h2>
+        <div class="skill">
+          <div class="skill-head"><span>C / C++</span><span>88%</span></div>
+          <div class="bar"><span data-width="88%"></span></div>
+        </div>
+        <div class="skill">
+          <div class="skill-head"><span>Python / AI Pipeline</span><span>92%</span></div>
+          <div class="bar"><span data-width="92%"></span></div>
+        </div>
+        <div class="skill">
+          <div class="skill-head"><span>CUDA / 性能优化</span><span>81%</span></div>
+          <div class="bar"><span data-width="81%"></span></div>
+        </div>
+        <div class="skill">
+          <div class="skill-head"><span>ROS / 机器人系统</span><span>85%</span></div>
+          <div class="bar"><span data-width="85%"></span></div>
+        </div>
+        <div class="skill">
+          <div class="skill-head"><span>Linux / 工程部署</span><span>86%</span></div>
+          <div class="bar"><span data-width="86%"></span></div>
+        </div>
+        <div class="skill">
+          <div class="skill-head"><span>英语（CET-4 / CET-6）</span><span>80%</span></div>
+          <div class="bar"><span data-width="80%"></span></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="card" style="margin-top:14px;">
+      <h2>实习经历</h2>
+      <ul class="timeline">
+        <li class="item">
+          <h3>松延动力（北京）科技有限公司｜算法工程师</h3>
+          <div class="time">2026.01 - 2026.03</div>
+          <p>
+            负责轮足机器人 Sim-to-Real 强化学习控制系统（Isaac Gym → ROS）。
+            搭建并行仿真环境，完成关节状态/姿态建模、PPO 策略训练与部署，
+            打通 RL policy 到底层电机控制链路，实现速度、方向与视觉导航控制策略落地。
+          </p>
+        </li>
+        <li class="item">
+          <h3>北京蚁触智能科技有限公司｜算法工程师 / 嵌入式工程师</h3>
+          <div class="time">2025.02 - 2025.06</div>
+          <p>
+            设计音乐到触觉振动的端到端系统，基于 CNN-BiLSTM 与 Transformer 进行时序回归，
+            输出连续强度和频率参数，驱动振动执行器；同时推进 STM32/ESP32 软硬件联调。
+          </p>
+        </li>
+        <li class="item">
+          <h3>中国科学院自动化研究所｜嵌入式工程师</h3>
+          <div class="time">2023.12 - 2024.05</div>
+          <p>参与自主飞行扑翼机开发，承担电机驱动与传感器驱动模块开发和调试。</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card" style="margin-top:14px;">
+      <h2>代表项目</h2>
+      <div class="project-grid">
+        <article class="project">
+          <h3>基于 MLIR 编译器的加密神经网络构建（算法负责人）</h3>
+          <p>
+            负责同态加密编译器 HEIR 设计与实现，完成端到端编译流程；
+            对 CUDA 全同态算子进行优化，推动异构计算方案落地，
+            计算效率相较纯 CPU 和纯 GPU 分别提升 81% 和 12%。
+          </p>
+        </article>
+        <article class="project">
+          <h3>基于 VMC 虚拟模型控制的跃行四足机器人（算法与硬件负责人）</h3>
+          <p>
+            构建上位机 ROS 控制与下位机电机控制协同架构，
+            部署 YOLOv8 视觉感知，实现行走与弹跳等动作控制。
+            项目参加 2024 Robocon 四足赛道并获得全国二等奖。
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:14px;">
+      <h2>竞赛荣誉</h2>
+      <div class="awards">
+        <div class="award">全国大学生电子设计竞赛<br />全国二等奖（2023.08）</div>
+        <div class="award">全国大学生机器人竞赛 Robocon<br />二等奖（2024.07）</div>
+      </div>
+    </section>
+
+    <p class="footer">Last Updated · 2026-03-03</p>
+  </div>
+
+  <script>
+    const bars = document.querySelectorAll(".bar > span");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.width = entry.target.dataset.width || "0%";
+        }
+      });
+    }, { threshold: 0.5 });
+    bars.forEach((b) => observer.observe(b));
+  </script>
+</body>
+</html>
